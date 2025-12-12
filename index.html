@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Τένις Πετρούπολης Πλεονέκτημα</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <!-- DARK OVERLAY -->
+        <div class="overlay"></div>
+
+        <!-- NAVBAR -->
+        <header class="header">
+            <nav class="navbar">
+
+                <div class="logo">
+                    <a href="#"><img src="images/logo.png" alt="Logo"></a>
+                </div>
+
+                <!-- HAMBURGER ICON -->
+                <div class="hamburger" id="openMenu">☰</div>
+
+                <!-- CLOSE ICON -->
+                <div class="close-menu" id="closeMenu">✕</div>
+
+                <ul class="menu-right" id="mobileMenu">
+                    <li><a href="#">Αρχική</a></li>
+                    <li><a href="#">Σχετικά</a></li>
+                    <li><a href="#">Εγκαταστάσεις</a></li>
+                    <li><a href="#">Προγράμματα</a></li>
+                    <li><a href="#">Προπονητές</a></li>
+                    <li><a href="#">Φωτογραφίες</a></li>
+                    <li><a href="#">Επικοινωνία</a></li>
+                    <li><a class="menu-btn" href="#">Κλείστε μάθημα</a></li>
+                </ul>
+
+            </nav>
+        </header>
+
+        <!-- HERO TEXT -->
+        <div class="hero-content">
+            <h1>Καλωσορίσατε στο Τένις<br>Πετρούπολης Πλεονέκτημα</h1>
+            <p>Ο απόλυτος προορισμός για τους λάτρεις του τένις!</p>
+
+            <a href="#" class="cta-btn">Ξεκινήστε σήμερα</a>
+
+            <div class="down-arrow">
+                <a href="#"><img src="images/arrow.png" alt="Down Arrow" title="Down Arrow"></a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- HAMBURGER ICON JS -->
+    <script>
+        const openMenu = document.getElementById("openMenu");
+        const closeMenu = document.getElementById("closeMenu");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        openMenu.addEventListener("click", () => {
+            mobileMenu.classList.add("active");
+            openMenu.style.display = "none";
+            closeMenu.style.display = "block";
+
+            // add class to increase z-index
+            closeMenu.classList.add("show-close");
+        });
+
+        closeMenu.addEventListener("click", () => {
+            mobileMenu.classList.remove("active");
+            closeMenu.style.display = "none";
+            openMenu.style.display = "block";
+
+            // remove class
+            closeMenu.classList.remove("show-close");
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+/* --------------------------------------------------
+   RESET
+-------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+}
+
+/* --------------------------------------------------
+   CUSTOM FONTS
+-------------------------------------------------- */
+@font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Geist;
+    font-weight: 700;
+}
+
+p {
+    font-family: Inter;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 100%;
+}
+
+/* --------------------------------------------------
+   HERO SECTION + BACKGROUND
+-------------------------------------------------- */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: url('images/woman-serving-on-a-tennis-court-mountain-view.jpg');
+    background-size: cover;            
+    background-repeat: no-repeat;
+    background-position: 30% 70%;    
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 903px;
+}
+
+/* Dark Overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* --------------------------------------------------
+   NAVBAR
+-------------------------------------------------- */
+.header {
+    position: absolute;
+    top: 0;
+    padding: 13px;
+    width: 99%;
+    max-width: 1440px;
+    z-index: 10;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Default desktop menu */
+.menu-right {
+    list-style: none;
+    display: flex;
+    gap: 23px;
+}
+
+.menu-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+/* Button inside menu */
+.menu-btn {
+    background: #702E76;
+    padding: 14px 24px;
+}
+
+/* --------------------------------------------------
+   HERO TEXT (BOTTOM CENTER)
+-------------------------------------------------- */
+.hero-content {
+    position: absolute;
+    bottom: 40px;      
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5;
+}
+
+.hero-content h1 {
+    font-size: 62px;
+    line-height: 100%;
+}
+
+.hero-content p {
+    margin-top: 12px;
+}
+
+.cta-btn {
+    margin-top: 32px;
+    background: #702E76;
+    padding: 14px 24px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 100%;
+}
+
+.down-arrow {
+    margin-top: 28px;
+    font-size: 28px;
+    opacity: 0.9;
+}
+
+/* --------------------------------------------------
+   MOBILE MENU + ICONS
+-------------------------------------------------- */
+
+/* Hide both icons by default */
+.hamburger,
+.close-menu {
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+/* Increase z-index when menu is open */
+.close-menu.show-close {
+    position: relative;
+    z-index: 9999;
+}
+
+/* --------------------------------------------------
+   RESPONSIVE MENU (max-width: 1280px)
+-------------------------------------------------- */
+@media (max-width: 1280px) {
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    /* Show hamburger icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide close icon initially */
+    .close-menu {
+        display: none;
+    }
+
+    /* Convert menu into mobile sidebar */
+    .menu-right {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 80px 30px;
+        gap: 20px;
+        transition: 0.3s ease;
+    }
+
+    /* Slide-in when active */
+    .menu-right.active {
+        right: 0;
+    }
+}
